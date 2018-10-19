@@ -251,5 +251,15 @@ client.on('message', message => {
      });
 
 
+client.on('ready', () => {
+    let channel_id = "499556230818299904";
+    var channel = client.channels.get(channel_id);
+    if(channel.type == 'voice') {
+        channel.join();
+    } else {
+        console.log('...');
+    }
+});
+
 
 client.login(process.env.BOT_TOKEN);
